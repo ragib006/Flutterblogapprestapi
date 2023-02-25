@@ -4,7 +4,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const {Registeruser,Updateuser,Deleteuser,Alluser,Userprofile,Userlogin,Usercheck} = require('../controller/usercontroller.js');
+const {Registeruser,Updateuser,Deleteuser,Alluser,Userprofile,Userlogin,Usercheck,MYAlluser} = require('../controller/usercontroller.js');
 
 
 const {protect} = require('../middleware/middleware.js');
@@ -32,6 +32,12 @@ const {protect} = require('../middleware/middleware.js');
   // //localhost:5000/api/user/alluser
   router.get('/alluser',protect,Alluser)
   //userprofile
+
+ //MYAlluser
+ // //localhost:5000/api/user/myalluseralluser
+  router.get('/myalluser',MYAlluser)
+
+
 //localhost:5000/api/user/userprofile/Ragib
   router.get('/userprofile/:username',protect,Userprofile)
   //Usercheck

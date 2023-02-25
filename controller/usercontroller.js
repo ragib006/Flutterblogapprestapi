@@ -221,6 +221,37 @@ const Alluser = asyncHandler(async(req,res)=>{
 })
 
 
+
+
+
+const MYAlluser = asyncHandler(async(req,res)=>{
+          
+   try{
+
+          const alluser = await User.find();
+
+          res.status(200).json(alluser)
+
+
+      }catch(error){
+
+         res.status(404).json(error)
+
+      }
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
 //Userprofile
 
 
@@ -367,4 +398,4 @@ const Userlogin = asyncHandler(async(req,res)=>{
 
 
 
-module.exports = {Registeruser,Updateuser,Deleteuser,Alluser,Userprofile,Userlogin,Usercheck}
+module.exports = {Registeruser,Updateuser,Deleteuser,Alluser,Userprofile,Userlogin,Usercheck,MYAlluser}
